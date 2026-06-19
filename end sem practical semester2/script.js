@@ -1,3 +1,5 @@
+let timer;
+
 function startCountdown() {
     let n = parseInt(document.getElementById("num").value);
     let output = document.getElementById("output");
@@ -7,9 +9,12 @@ function startCountdown() {
         return;
     }
 
+    // Stop any existing timer
+    clearInterval(timer);
+
     output.innerHTML = n;
 
-    let timer = setInterval(function () {
+    timer = setInterval(() => {
         n--;
 
         if (n > 0) {
@@ -19,4 +24,12 @@ function startCountdown() {
             clearInterval(timer);
         }
     }, 1000);
+}
+
+function resetCountdown() {
+    clearInterval(timer); // Stop the countdown
+    timer = null;
+    
+    document.getElementById("num").value = "";
+    document.getElementById("output").innerHTML = "";
 }
