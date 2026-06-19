@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flipkart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="logo">flipkart</div>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search products...">
+      <button onclick="searchProducts()">🔍</button>
+    </div>
+    <nav id="nav-bar">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#cart" class="nav-link">Cart 🛒</a>
+    </nav>
+  </header>
+
+  
+  <section id="home" class="hero">
+    <h1>Welcome to flipkart</h1>
+    <p>Shop millions of products at unbeatable prices!</p>
+  </section>
+
+ 
+  <section class="filter">
+    <label for="category">Filter by Category:</label>
+    <select id="category" onchange="filterProducts()">
+      <option value="all">All</option>
+      <option value="electronics">Electronics</option>
+      <option value="accessories">Accessories</option>
+      <option value="fashion">Fashion</option>
+    </select>
+  </section>
+
+
+  <section id="products" class="products">
+    <h2>Featured Products</h2>
+    <div class="product-list" id="product-list">
+      <div class="product" data-category="accessories">
+        <img src="headphone.jpeg" alt="Headphones">
+        <h3>Wireless Headphones</h3>
+        <p>$50</p>
+        <button onclick="addToCart('Wireless Headphones', 50)">Add to Cart</button>
+      </div>
+      <div class="product" data-category="electronics">
+        <img src="smartphone.jpeg" alt="Smartphone">
+        <h3>Smartphone</h3>
+        <p>$300</p>
+        <button onclick="addToCart('Smartphone', 300)">Add to Cart</button>
+      </div>
+      <div class="product" data-category="electronics">
+        <img src="laptop.jpeg" alt="Laptop">
+        <h3>Laptop</h3>
+        <p>$800</p>
+        <button onclick="addToCart('Laptop', 800)">Add to Cart</button>
+      </div>
+      <div class="product" data-category="fashion">
+        <img src="shoes.jpeg" alt="Shoes">
+        <h3>Running Shoes</h3>
+        <p>$120</p>
+        <button onclick="addToCart('Running Shoes', 120)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="cart" class="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">Total: $0</p>
+    <button id="checkout" onclick="checkout()">Proceed to Checkout</button>
+  </section>
+
+ 
+  <footer>
+    <p>&copy; 2026 flipkart. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Help</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
