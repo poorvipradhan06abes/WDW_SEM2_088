@@ -1,0 +1,413 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #eef3f8;
+    color: #333;
+    animation: pageFade 1s ease;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(90deg, #1f3b73, #29539b);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 35px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4fc3f7;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: rotate(-5deg) scale(1.1);
+    color: white;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-bar {
+    display: flex;
+    gap: 8px;
+}
+
+.search-bar input {
+    width: 220px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    width: 280px;
+    box-shadow: 0 0 12px rgba(79,195,247,0.8);
+}
+
+.search-bar button {
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-bar button:hover {
+    background: #0288d1;
+    transform: scale(1.08);
+}
+
+.search-bar button::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    transition: 0.5s;
+}
+
+.search-bar button:hover::before {
+    left: 100%;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+#nav-bar {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -5px;
+    background: #4fc3f7;
+    transition: 0.4s;
+}
+
+.nav-link:hover {
+    color: #4fc3f7;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    background: linear-gradient(135deg, #4fc3f7, #b2ebf2);
+    padding: 80px 20px;
+    text-align: center;
+    color: #1f3b73;
+    animation: heroFade 1.5s ease;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%,20%,50%,80%,100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-12px);
+    }
+    60% {
+        transform: translateY(-6px);
+    }
+}
+
+/* =========================
+   FILTER
+========================= */
+
+.filter {
+    text-align: center;
+    padding: 25px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    padding: 40px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product {
+    width: 230px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    animation: fadeUp 1s ease;
+}
+
+.product:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.product img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+.product:hover img {
+    transform: rotate(8deg) scale(1.15);
+    filter: drop-shadow(0 0 12px #4fc3f7);
+}
+
+.product h3 {
+    margin: 12px 0;
+}
+
+.product p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product button {
+    background: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.product button:hover {
+    background: #0288d1;
+    transform: scale(1.08);
+}
+
+.product button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    transition: .5s;
+}
+
+.product button:hover::before {
+    left: 100%;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Animation */
+
+.product {
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cart:hover {
+    transform: scale(1.02);
+}
+
+#checkout {
+    margin-top: 20px;
+    background: #1f3b73;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#checkout:hover {
+    background: #29539b;
+    transform: scale(1.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #1f3b73;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.footer-links {
+    margin-top: 12px;
+}
+
+.footer-links a {
+    color: #4fc3f7;
+    margin: 0 12px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d9e3f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #29539b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1f3b73;
+}
